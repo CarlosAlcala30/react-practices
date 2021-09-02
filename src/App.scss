@@ -1,0 +1,27 @@
+.semaforo{
+  width:100px;
+  height:100px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  border: 2px solid peru
+}
+
+.semaforo .luz{
+  width:75px;
+  height:75px;
+  border-radius:100%;
+  background-color:#ddd;
+}
+
+.siga{
+  background-color:green !important
+}
+
+.precaucion{
+  background-color:yellow !important
+}
+
+.alto{
+  background-color:red !important
+}
