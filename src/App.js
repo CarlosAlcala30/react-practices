@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react'
 
 import "./App.scss"
@@ -91,3 +92,30 @@ const App = () => {
 }
 
 export default App
+=======
+import React,{Component} from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component{
+  constructor(){
+    super()
+    this.state = {
+      
+    }
+  }
+
+
+  render(){
+    return (
+      <>
+        
+      </>
+    )
+    
+  }
+}
+
+export default App
+
+>>>>>>> 342819fc8e9e01824a312a17b5a1b5e8ddab07ed
