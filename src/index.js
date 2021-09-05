@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
-=======
-import './index.css';
->>>>>>> 342819fc8e9e01824a312a17b5a1b5e8ddab07ed
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
