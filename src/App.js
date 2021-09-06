@@ -56,29 +56,38 @@ const App = () => {
 
   return (
     <>
-      <Container fluid className="bg-container d-flex flex-column align-items-center"> 
+      <Container fluid className="bg-container d-flex flex-column align-items-center vh-100"> 
         <div class="cal-title"><h1>SPLI<br/>TTER</h1></div>
         <Row className="cal-container">
           <Col md="6" className="">            
           <Form>
-            <FormGroup>
+     <Row className="d-flex align-items-start flex-column">            <FormGroup>
               <Label for="bill-input">Bill</Label>
               <Input type="number" class="text-right" name="bill" id="bill-input" placeholder="$" onChange={billHandler} value={bill}/>
             </FormGroup>
-            <FormGroup>
+            </Row>
+     <Row className="d-flex align-items-center flex-column">            <FormGroup>
               <Label>Select tip %</Label>
-              <Button type="button"  data-tip=".05" onClick={tipHandler}>5%</Button>
-              <Button type="button"  data-tip=".10" onClick={tipHandler}>10%</Button>
-              <Button type="button" data-tip=".15" onClick={tipHandler}>15%</Button>
-              <Button type="button"  data-tip=".25" onClick={tipHandler}>25%</Button>
-              <Button type="button"  data-tip=".50" onClick={tipHandler}>50%</Button>
-              <Input type="number" min="0" placeholder="CUSTOM"/>
+              <div class="area-button d-flex justify-content-between">
+              <div class="row row-cols-3 d-flex">
+                <Button type="button " class="col button-green" data-tip=".05" onClick={tipHandler}>5%</Button>
+                <Button type="button"  class="col button-green"  data-tip=".10" onClick={tipHandler}>10%</Button>
+                <Button type="button"  class="col button-greenton active"  data-tip=".15" onClick={tipHandler}>15%</Button>
+                        </div> <div class="row row-cols-3">
+                <Button type="button"  class="col button-green"  data-tip=".25" onClick={tipHandler}>25%</Button>
+                <Button type="button"  class="col button-green"  data-tip=".50" onClick={tipHandler}>50%</Button>
+                <Input type="number"  class="col"  min="0" placeholder="CUSTOM"/>
+                </div>
+              </div>  
             </FormGroup>
+            </Row>
+            <Row className="d-flex align-items-end flex-column">
             <FormGroup>
               <Label for="people-input">Number of People</Label>
               
               <Input type="number" class="text-right" name="people" id="people-input" placeholder="&#61442;" onChange={peopleHandler} value={people} />
             </FormGroup>
+            </Row>
           </Form>
           </Col>
           <Col md="6" className="print-total">

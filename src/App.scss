@@ -1,21 +1,6 @@
 @import "../src/Assets/globals.scss";
 
-*{
-  box-sizing: border-box;
-  margin-top:0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin: 0;
-  padding: 0;
-  font-family: $font-family;
-}
-
-body{
-  margin-top: 100px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+.bg-container{
   background-color: $primary-cyan;
 }
 
@@ -35,6 +20,8 @@ body{
   background-color:white;
   border-radius: 5px;
   border:solid 1px black;
+padding: 2% 2%;
+box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 
  .amount{
@@ -54,56 +41,44 @@ body{
     text-align: right;
 }
 
+label{
+color: #5E7A7D;
+font-weight: bold; 
+}
+input{
+  background-color: #F3F9FA; 
 
+}
+#bill-input{
+   text-align: right;
+}
+
+div.row button{
+  background-color: $very-dark-cyan;
+color: white;
+}
+div.row button.active{
+  background-color: #26C2AE;
+  color: black;
+}
 /*****************************************lado izq********************************/
 
 
 
 /***********************lado der *************************************************/
 .print-total{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   height: 400px;
   width: 400px;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
   background-color: $very-dark-cyan;
   border-radius: .5rem;
-  div{
-    width: 90%;
-    margin: 30px 0 30px 0;
-    display: flex;
-    justify-content: space-between;
-    p{
-      color:white;
-      font-weight: 800;
-      span{
-        color:$less-dark-grayish-cyan;
-        font-weight: 800;
-      }
-    }
-    h2{
-      display: block;
-      font-size: $font-size-amount;
-      font-weight: 800;      
-      color:$primary-cyan;
-
-    }
-    button{
-      height: 50px;
-      margin-left: 1rem;
-      align-self: center;
-      text-align: center;
-      margin-top: 20px;
-      width: 90%;
-      background-color: $primary-cyan;
-      color: $very-dark-cyan;
-      font-weight: 800;
-      font-size: 20px;
-      border: 0;
-      border-radius: .25rem;
-    }
-  }
+  &div{
+   &p{
+     color:white;
+     &span{
+       color:$less-dark-grayish-cyan
+     }
+   }
+ }
 }
