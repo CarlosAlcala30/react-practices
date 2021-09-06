@@ -20,26 +20,37 @@ const App = () => {
   const [bill, setBill] = useState(0)
   const [tip, setTip] = useState(0)
   const [people, setPeople] = useState(0)
+  const [tipPerPerson, setTipPerPerson] = useState(0)
+  const [totalPerPerson, setTotalPerPerson] = useState(0)
 
   const billHandler = event => {
     const price = event.target.value
     setBill(price)
+    setTotalPerPerson( (1+tip)*bill )
+    setTipPerPerson( tip*bill )
   }
 
   const tipHandler = event => {
     const tip = event.target.dataset.tip
     setTip(tip);
+    setTotalPerPerson( (1+tip)*bill )
+    setTipPerPerson(tip*bill)
   }
 
   const peopleHandler = event => {
     const value = event.target.value
     setPeople(value);
+    setTotalPerPerson( totalPerPerson/value )
+    setTipPerPerson( tipPerPerson/value )
+
   }
 
   const resetHandler = event => {
     setBill(0);
     setTip(0);
     setPeople(0);
+    setTotalPerPerson( 0)
+    setTipPerPerson( 0)
   }
 
 
@@ -71,16 +82,16 @@ const App = () => {
           </Form>
           </Col>
           <Col md="6" className="print-total">
-            <div className="d-flex justify-content-between">
-              <p className="col-6">Tip Amount<br/><span>/person</span></p>
-              <h2 className="col-6"id="tip-total">${bill?((bill*tip)/people):0}</h2>
+            <div >
+              <p className="">Tip Amount<br/><span>/person</span></p>
+              <h2 className=""id="tip-total">${tipPerPerson?Math.round( tipPerPerson *100 )/100 :0}</h2>
             </div> 
-            <div className="d-flex">
-              <p className="col-6">Total<br/><span>/person</span></p>
-              <h2 className="col-6" id="total">${bill?((bill*(tip+1))/people):0}</h2>
+            <div className="">
+              <p className="">Total<br/><span>/person</span></p>
+              <h2 className="" id="total">${totalPerPerson ? Math.round( totalPerPerson *100 ) /100:0}</h2>
             </div>
-            <div className="d-flex justify-content-center">
-              <Button type="input" size="lg" onClick={resetHandler}>RESET</Button>
+            <div className="">
+              <button type="button" onClick={resetHandler}>RESET</button>
             </div>
           </Col>
         </Row>
